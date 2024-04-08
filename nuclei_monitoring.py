@@ -1,287 +1,183 @@
-import requests
 import os
 import json
 from datetime import datetime, timedelta, timezone
-
 from git import Repo, GitCommandError
 import yaml
+import requests
+import argparse
 
 class NucleiTemplate:
-    def __init__(self, filepath, raw_url=None, commit_date=None, status=None):
-        self.commit_date = commit_date
+    def __init__(self, filepath, creation_time, category, name, severity, description, raw_url):
         self.filepath = filepath
+        self.creation_time = creation_time
+        self.category = category
+        self.name = name
+        self.severity = severity
+        self.description = description
         self.raw_url = raw_url
-        self.name = None
-        self.category = self.extract_category_from_url(raw_url)
-        self.severity = None
-        self.description = None
-        self.status = status
-        self.load_attributes()
-    
-    @property
-    def unique_id(self):
-        return self.name  # or self.filepath if more appropriate
 
-    def load_attributes(self):
-        """Loads template attributes from the YAML file."""
-        with open(self.filepath, 'r') as file:
-            data = yaml.safe_load(file)
-            self.name = data.get('id', 'Unknown')
-            self.severity = data.get('info', {}).get('severity', 'Unknown')
-            self.description = data.get('info', {}).get('description', 'No description available.')
+    def to_dict(self):
+        """Serializes the object to a dictionary, suitable for JSON."""
+        return {
+            "creation_time": self.creation_time.isoformat() if self.creation_time else None,
+            "filepath": self.filepath,
+            "raw_url": self.raw_url,
+            "name": self.name,
+            "category": self.category,
+            "severity": self.severity,
+            "description": self.description
+        }
 
-    def extract_category_from_url(self, url):
-        """Extracts the template category from the raw URL, defined as the first word after 'main'."""
-        if url:
-            parts = url.split('/')
-            if "main" in parts:
-                # The category is the segment immediately after 'main'
-                main_index = parts.index("main")
-                # Check if there's at least one segment following 'main'
-                if main_index + 1 < len(parts):
-                    return parts[main_index + 1]
-        return "Uncategorized"
-    
-    def to_json(self):
-        """Serializes the object to a JSON string."""
-        # Convert datetime to string for JSON serialization
-        obj_dict = self.__dict__.copy()
-        obj_dict['commit_date'] = obj_dict['commit_date'].isoformat() if obj_dict['commit_date'] else None
-        return json.dumps(obj_dict, indent=4)
-    
     @staticmethod
-    def from_json(json_str):
-        """Deserializes the object from a JSON string."""
-        obj_dict = json.loads(json_str)
-        # Convert the datetime string back to a datetime object
-        obj_dict['commit_date'] = datetime.fromisoformat(obj_dict['commit_date']) if obj_dict['commit_date'] else None
-        return NucleiTemplate(**obj_dict)
-    
-    def __repr__(self):
-        return f"NucleiTemplate(name={self.name}, severity={self.severity}, description={self.description[:30]}, raw_url={self.raw_url})"
-    
+    def from_dict(data):
+        """Deserializes the object from a dictionary."""
+        data['creation_time'] = datetime.fromisoformat(data['creation_time']) if data.get('creation_time') else None
+        return NucleiTemplate(**data)
 
-def send_telegram_message(telegram_chat_id, message):
-    """Sends message to a Telegram chat."""
-    url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
-    data = {
-        "chat_id": telegram_chat_id,
-        "text": message,
-        "parse_mode": "HTML"
-    }
-    response = requests.post(url, data=data)
-    response.raise_for_status()
+class NucleiTemplateManager():
+    def __init__(self, repo_url, repo_local_path):
+        self.repo_url = repo_url
+        self.repo_local_path = repo_local_path
+        self.templates = {}
 
-def clone_or_update_repository(repo_url, repo_path):
-    """Clones the Nuclei templates repo if it doesn't exist, or pulls updates if it does."""
-    if not os.path.exists(repo_path):
+    def get_templates(self):
+        return self.templates
+
+    def load_templates_from_db(self, db_path):
         try:
-            Repo.clone_from(repo_url, repo_path)
-        except GitCommandError as error:
-            print(f"Failed to clone repository: {error}")
+            with open(db_path, 'r') as json_file:
+                templates_data = json.load(json_file)
+                self.templates = {data['name']: NucleiTemplate.from_dict(data) for data in templates_data}
+        except FileNotFoundError:
+            return
+    
+    def save_templates(self, db_file_path):
+        templates_data = [template.to_dict() for template in self.templates.values()]
+
+        if not templates_data:
+            print ('Nothing to save')
+            return 
+        
+        with open(db_file_path, 'w') as json_file:
+            json.dump(templates_data, json_file, default=str, indent=4)
+    
+    def update_repository_local(self):
+        if not os.path.exists(self.repo_local_path):
+            try:
+                return Repo.clone_from(self.repo_url, self.repo_local_path)
+            except GitCommandError as error:
+                print(f"Failed to clone repository: {error}")
+                return None
+        repo = Repo(self.repo_local_path)
+        repo.git.pull()
+        self.repo = repo
+
+    def find_template_creation_date(self, file_path):
+        print (file_path)
+        # Get the list of commits that include the specified file, ordered from latest to earliest
+        commits = list(self.repo.iter_commits(paths=file_path))
+        
+        # The last commit in the list, if any, should be the first commit where the file appears
+        if commits:
+            first_commit = commits[-1]
+            return first_commit.committed_datetime
+        else:
             return None
-    repo = Repo(repo_path)
-    origin = repo.remotes.origin
-    origin.pull()
-    return repo
-
-def get_commits_by_date(repo, hours_ago):
-    """Fetches commits from the last specified number of days."""
-    end_date = datetime.now()
-    start_date = end_date - timedelta(hours=hours_ago)
-    commits = list(repo.iter_commits(since=start_date.isoformat(), until=end_date.isoformat()))
-    return commits
-
-def is_template_new(repo, file_path):
-    print(file_path)
-    """
-    Determines if the template is newly created based on its commit history.
-    Assumes files are not renamed.
-    """
-    commits_for_file = list(repo.iter_commits(paths=file_path))
-    # If the file has only one commit, it's considered new. Otherwise, it's considered modified.
-    return len(commits_for_file) == 1
-
-
-def find_templates_in_commits(repo, commits):
-    """Finds new templates in the specified commits and creates NucleiTemplate objects, avoiding duplicates."""
-    new_templates = {}
-
-    for commit in commits:
-        commit_date = commit.committed_datetime.astimezone(timezone.utc)
-        try:
-            for file_path in commit.stats.files:
-                if file_path.endswith(".yaml"):
-                    raw_url = f"https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/{file_path}"
-                    
-                    template = NucleiTemplate(filepath=os.path.join(repo.working_dir, file_path),
-                                              raw_url=raw_url,
-                                              commit_date=commit_date
-                                              )  
-                    
-                    # Logic to ensure the most recent commit for a file is used
-                    if template.name not in new_templates or commit_date > new_templates[template.name].commit_date:
-                        template.status = "new" if is_template_new(repo, file_path) else "modified"
-                        new_templates[template.name] = template
-        except Exception as ex:
-            print(f"Error processing file '{file_path}': {ex}")
     
-    return list(new_templates.values())
+    def get_commits(self, hours_ago):
+        end_date = datetime.now(timezone.utc)
+        start_date = end_date - timedelta(hours=hours_ago)
+        return list(self.repo.iter_commits(since=start_date.isoformat(), until=end_date.isoformat()))
 
-def save_templates_to_json(templates, json_file_path):
-    with open(json_file_path, 'w') as json_file:
-        # Serialize each template to JSON and write it to the file
-        json_file.writelines([template.to_json() + "\n" for template in templates])
+    def update_templates_from_commits(self, commits):
+        for commit in commits:
+            for filepath in list(commit.stats.files):
+                if filepath.endswith(".yaml"):
 
+                    name = os.path.basename(filepath).split('.')[0]  # Use file name as unique identifier
+                    if name in self.templates:
+                        continue  
+                        
+                    try:
+                        local_path = os.path.join(self.repo.working_dir, filepath)
+                        category = filepath.split('/')[0]
+                        with open(local_path, 'r') as file:
+                            data = yaml.safe_load(file)
+                            template_severity = data.get('info', {}).get('severity', 'Unknown')
+                            template_description = data.get('info', {}).get('description', 'No description available.')
+                        
+                        creation_time = self.find_template_creation_date(filepath)
 
-def load_templates_from_json(json_file_path):
-    templates = []
-    with open(json_file_path, 'r') as json_file:
-        for line in json_file:
-            templates.append(NucleiTemplate.from_json(line.strip()))
-    return templates
+                        template = NucleiTemplate(
+                            name = name,
+                            filepath=filepath,
+                            creation_time=creation_time,
+                            category=category,
+                            severity=template_severity,
+                            description=template_description,
+                            raw_url=f'https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/{filepath}'
+                            )
+                        
+                    except Exception as err:
+                        continue
 
-def load_templates_cache(json_file_path):
-    try:
-        with open(json_file_path, 'r') as json_file:
-            templates_data = json.load(json_file)
-        # Convert list to a dictionary for faster lookup, using the unique identifier
-        return {template_data['name']: template_data for template_data in templates_data}
-    except FileNotFoundError:
-        return {}
+                    self.templates[name] = template
     
+    def load_data_for_last_hours(self, hours_ago):
+        new_commits = self.get_commits(hours_ago)
+        self.update_templates_from_commits(new_commits)
+
+
+def filter_templates(template, category, severity, hours):
+    current_time = datetime.now(timezone.utc)
+    category_condition = (template.category in category) if category else True
+    severity_condition = (template.severity in severity) if severity else True
+    time_condition = current_time - template.creation_time < timedelta(hours=hours)
+    return category_condition and severity_condition and time_condition
+
+
 def main():
+    parser = argparse.ArgumentParser(description='Filter templates and extract raw URLs.')
+    parser.add_argument('--hours', type=int, default=8, help='Hours ago for creation time filter')
+    parser.add_argument('--category', type=str, help='Comma separated categories to filter by. Omit for all.')
+    parser.add_argument('--severity', type=str, help='Comma separated severities levels to include. Omit for all.')
+    parser.add_argument('--output', type=str, help='File to save results')
 
-    # Load settings from settings.yml
-    with open('settings.yml', 'r') as file:
-        settings = yaml.safe_load(file)
+    args = parser.parse_args()
 
-    json_file_path = 'templates_cache.json'
-    github_token = settings['github']['token']
-    repo_url = settings['repository']['url']
-    repo_path = settings['repository']['local_path']
-    telegram_bot_token = settings['telegram']['bot_token']
-    telegram_chat_id = settings['telegram']['chat_id']
+    settings = {
+        'repository': {
+            'url': 'https://github.com/projectdiscovery/nuclei-templates.git',
+            'local_path': './nuclei-templates'
+        },
+        'cache_file': 'templates_cache.json'
+    }
 
-    # Check if the cache file exists and is not empty
-    if os.path.exists(json_file_path) and os.path.getsize(json_file_path) > 0:
-        # Load templates from the cache
-        templates = load_templates_from_json(json_file_path)
-        print("Loaded templates from cache.")
-    else:
-        # Fetch new data if cache is not available
-        repo = clone_or_update_repository(repo_url, repo_path)
-        if repo:
-            all_commits = get_commits_by_date(repo, 4)  # Adjust time frame as needed
-            templates = find_templates_in_commits(repo, all_commits)
-            # Save the fetched templates to cache for future runs
-            save_templates_to_json(templates, json_file_path)
-            print("Fetched new templates and updated cache.")
+    nuclei_manager = NucleiTemplateManager(
+        repo_url=settings['repository']['url'],
+        repo_local_path=settings['repository']['local_path'],
+    )
+
+    hours = args.hours
+    severity = [severity.lower().strip() for severity in args.severity.split(",") if args.severity]
+    category = [category.lower().strip() for category in args.category.split(",") if args.category]
+
+    nuclei_manager.update_repository_local()
+    nuclei_manager.load_templates_from_db('templates_cache.json')
+    nuclei_manager.load_data_for_last_hours(hours)
+    nuclei_manager.save_templates('templates_cache.json')
+
+    all_templates = nuclei_manager.get_templates().values()
+    filtered_templates = [template for template in all_templates if filter_templates(template, category, severity, hours)]
+    filtered_templates_json = [obj.to_dict() for obj in filtered_templates]
     
-    # Example: Processing loaded or fetched templates
-    for template in templates:
-        print(template.name, template.status)
-
-
-        # Filter templates by date
-        #templates_last_1_day = filter_templates_by_date(all_templates, 1)
-        #templates_last_1_day_http = filter_templates_by_category(templates_last_1_day, 'http')
-
-        #templates_last_7_days = filter_templates_by_date(all_templates, 7)
-        #templates_last_7_days_http = filter_templates_by_category(templates_last_7_days, 'http')
-        #templates_last_30_days = all_templates  # Already filtered to last 30 days
-
-        # Write raw URLs to files
-        #write_raw_urls_to_file(templates_last_1_day_http, 'new_templates_1_day_http.txt')
-        #write_raw_urls_to_file(templates_last_7_days_http, 'new_templates_7_days_http.txt')
-        #write_raw_urls_to_file(templates_last_30_days, 'new_templates_30_days.txt')
-
-
-    # Handle new pull requests
-    # last_check_time = get_last_check_pr_time()
-    # new_prs = fetch_new_prs(last_check_time)
-    # if new_prs:
-    #     pr_message = f"New Pull Requests in Nuclei Templates:\n {new_prs}"
-    #     print (pr_message)
-    #     send_telegram_message(pr_message)
-    #     #save_list_to_file(new_pull_requests_file, [f"{pr['title']} - {pr['html_url']}" for pr in new_prs])
-    #     save_new_prs(new_prs)
-    #     save_last_check_pr_time()
+    
+    if args.output:
+        with open(args.output, 'w') as file:
+            for template_json in filtered_templates_json:
+                # Convert the dictionary to a JSON string and write it to the file
+                json_str = json.dumps(template_json)
+                file.write(json_str + '\n')
 
 if __name__ == "__main__":
     main()
-
-
-
-# def get_last_check_pr_time():
-#     """Gets the last check time for pull requests."""
-#     if os.path.exists(last_check_pr_file):
-#         with open(last_check_pr_file, 'r') as file:
-#             last_check_time_str = file.read().strip()
-
-#             if last_check_time_str == '':
-#                 return None
-            
-#             last_check_time = datetime.fromisoformat(file.read().strip())
-#             return last_check_time
-#     return None
-
-# def save_last_check_pr_time():
-#     """Saves the current check time for pull requests."""
-#     with open(last_check_pr_file, 'w') as file:
-#         file.write(datetime.now().isoformat())
-
-# def fetch_new_prs(last_check_time):
-#     """Fetches new pull requests since the last check time and determines if they add or modify files."""
-#     headers = {'Authorization': f'token {github_token}'}
-#     pr_url = 'https://api.github.com/repos/projectdiscovery/nuclei-templates/pulls'
-#     params = {'state': 'open', 'sort': 'created', 'direction': 'desc'}
-#     response = requests.get(pr_url, headers=headers, params=params)
-#     prs = response.json()
-#     new_prs_info = []
-
-#     for pr in prs:
-#         created_at = datetime.strptime(pr['created_at'], '%Y-%m-%dT%H:%M:%SZ')
-#         if last_check_time and created_at <= last_check_time:
-#             continue
-
-#         # Fetch files for the PR
-#         files_response = requests.get(pr['url'] + '/files', headers=headers, params={'per_page': 100})
-#         files_response.raise_for_status()
-#         files = files_response.json()
-
-#         # Determine if there are new files
-#         new_files = [f for f in files if f['status'] == 'added']
-#         pr_info = {
-#             'id': pr['id'],
-#             'title': pr['title'],
-#             'created_at': pr['created_at'],
-#             'html_url': pr['html_url'],
-#             'new_files': len(new_files),
-#             'total_files': len(files)
-#         }
-#         new_prs_info.append(pr_info)
-
-#     return new_prs_info
-
-# def save_prs(prs):
-#     with open(new_pull_requests_file, 'w') as file:
-#         for pr in prs:
-#             pr_details = f"PR ID: {pr['id']}, Title: {pr['title']}, Created At: {pr['created_at']}, URL: {pr['html_url']}, New Files: {pr['new_files']}, Total Files: {pr['total_files']}\n"
-#             file.write(pr_details)
-
-# def filter_templates_by_date(templates, days):
-#     """Filters templates added within the specified number of days, ensuring timezone-aware comparison."""
-#     # Ensure the cutoff_date is offset-aware by using timezone.utc
-#     cutoff_date = datetime.now(timezone.utc) - timedelta(days=days)
-#     return [template for template in templates if template.commit_date >= cutoff_date]
-
-# def filter_templates_by_category(templates, category):
-#     """Filters templates by a given category."""
-#     return [template for template in templates if template.category.lower() == category.lower()]
-
-# def write_raw_urls_to_file(templates, filename):
-#     """Writes the raw URLs of the given templates to a file."""
-#     with open(filename, 'w') as file:
-#         for template in templates:
-#             file.write(template.raw_url + '\n')
