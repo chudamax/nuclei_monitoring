@@ -1,0 +1,12 @@
+github:
+  token: 
+
+repository:
+  url: https://github.com/projectdiscovery/nuclei-templates.git
+  local_path: /tmp/nuclei-templates
+
+telegram:
+  bot_token: ''
+  chat_id: 
+
+cache_file: 'templates_cache.json'
