@@ -1,0 +1,1 @@
+0,30 * * * * /bin/bash -c 'source /root/nuclei_monitoring/env/bin/activate && cd /root/nuclei_monitoring && git config user.email "you@example.com" && git config user.name "Your Name" && ./automate.sh && /usr/bin/git add . && /usr/bin/git commit -am "updates" && /usr/bin/git push' > /var/log/automate_script.log 2>&1
