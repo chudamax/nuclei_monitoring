@@ -29311,5 +29311,14 @@
         "category": "http",
         "severity": "high",
         "description": "There is any file reading in the officeWeb365 Indexs interface.\n"
+    },
+    {
+        "creation_time": "2024-04-05T12:06:40+01:00",
+        "filepath": "http/cves/2024/CVE-2024-2879.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-2879.yaml",
+        "name": "CVE-2024-2879",
+        "category": "http",
+        "severity": "critical",
+        "description": "The LayerSlider plugin for WordPress is vulnerable to SQL Injection via the ls_get_popup_markup action in versions 7.9.11 and 7.10.0 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.\n"
     }
 ]

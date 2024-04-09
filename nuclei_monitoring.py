@@ -35,10 +35,12 @@ class NucleiTemplate:
         return NucleiTemplate(**data)
 
 class NucleiTemplateManager():
-    def __init__(self, repo_url, repo_local_path):
+    def __init__(self, repo_url, repo_local_path, templates_file_path=None):
         self.repo_url = repo_url
         self.repo_local_path = repo_local_path
         self.templates = {}
+        self.repo = None
+        self.templates_file_path = templates_file_path
 
     def get_templates(self):
         return self.templates
@@ -48,8 +50,9 @@ class NucleiTemplateManager():
             with open(db_path, 'r') as json_file:
                 templates_data = json.load(json_file)
                 self.templates = {data['name']: NucleiTemplate.from_dict(data) for data in templates_data}
-        except FileNotFoundError:
-            return
+        except Exception as err:
+            print (err)
+            return {}
     
     def save_templates(self, db_file_path):
         templates_data = [template.to_dict() for template in self.templates.values()]
@@ -73,7 +76,6 @@ class NucleiTemplateManager():
         self.repo = repo
 
     def find_template_creation_date(self, file_path):
-        print (file_path)
         # Get the list of commits that include the specified file, ordered from latest to earliest
         commits = list(self.repo.iter_commits(paths=file_path))
         
@@ -117,13 +119,17 @@ class NucleiTemplateManager():
                             description=template_description,
                             raw_url=f'https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/{filepath}'
                             )
-                        
+                                                
                     except Exception as err:
                         continue
 
                     self.templates[name] = template
     
     def load_data_for_last_hours(self, hours_ago):
+        self.update_repository_local()
+        if self.templates_file_path:
+            self.load_templates_from_db(self.templates_file_path)
+        
         new_commits = self.get_commits(hours_ago)
         self.update_templates_from_commits(new_commits)
 
@@ -145,27 +151,38 @@ def main():
 
     args = parser.parse_args()
 
-    settings = {
-        'repository': {
-            'url': 'https://github.com/projectdiscovery/nuclei-templates.git',
-            'local_path': './nuclei-templates'
-        },
-        'cache_file': 'templates_cache.json'
-    }
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(current_dir, 'settings.yml')
+    with open(config_path, 'r') as file:
+        settings = yaml.safe_load(file)
+
+    # settings = {
+    #     'repository': {
+    #         'url': 'https://github.com/projectdiscovery/nuclei-templates.git',
+    #         'local_path': '/tmp/nuclei-templates'
+    #     },
+    #     'cache_file': 'templates_cache.json'
+    # }
 
     nuclei_manager = NucleiTemplateManager(
         repo_url=settings['repository']['url'],
         repo_local_path=settings['repository']['local_path'],
+        templates_file_path = settings['cache_file']
     )
 
     hours = args.hours
-    severity = [severity.lower().strip() for severity in args.severity.split(",") if args.severity]
-    category = [category.lower().strip() for category in args.category.split(",") if args.category]
+    if args.severity:
+        severity = [severity.lower().strip() for severity in args.severity.split(",") if args.severity]
+    else:
+        severity = []
 
-    nuclei_manager.update_repository_local()
-    nuclei_manager.load_templates_from_db('templates_cache.json')
+    if args.category:
+        category = [category.lower().strip() for category in args.category.split(",") if args.category]
+    else:
+        category = []
+
     nuclei_manager.load_data_for_last_hours(hours)
-    nuclei_manager.save_templates('templates_cache.json')
+    nuclei_manager.save_templates(settings['cache_file'])
 
     all_templates = nuclei_manager.get_templates().values()
     filtered_templates = [template for template in all_templates if filter_templates(template, category, severity, hours)]
