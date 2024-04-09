@@ -188,7 +188,6 @@ def main():
     filtered_templates = [template for template in all_templates if filter_templates(template, category, severity, hours)]
     filtered_templates_json = [obj.to_dict() for obj in filtered_templates]
     
-    
     if args.output:
         with open(args.output, 'w') as file:
             for template_json in filtered_templates_json:
