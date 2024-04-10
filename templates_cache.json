@@ -29320,5 +29320,23 @@
         "category": "http",
         "severity": "critical",
         "description": "The LayerSlider plugin for WordPress is vulnerable to SQL Injection via the ls_get_popup_markup action in versions 7.9.11 and 7.10.0 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.\n"
+    },
+    {
+        "creation_time": "2024-04-09T22:47:44+05:30",
+        "filepath": "http/misconfiguration/dlink-unauth-cgi-script.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/dlink-unauth-cgi-script.yaml",
+        "name": "dlink-unauth-cgi-script",
+        "category": "http",
+        "severity": "low",
+        "description": "A vulnerability has been identified in the D-Link DNS series network storage devices, allowing for the exposure of sensitive device information to unauthorized actors. This vulnerability is due to an unauthenticated access flaw in the info.cgi script, which can be exploited via a simple HTTP GET request, affecting over 920,000 devices on the Internet.\n"
+    },
+    {
+        "creation_time": "2024-04-09T23:08:47+05:30",
+        "filepath": "http/misconfiguration/intelbras-dvr-unauth.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/intelbras-dvr-unauth.yaml",
+        "name": "intelbras-dvr-unauth",
+        "category": "http",
+        "severity": "low",
+        "description": "The HTTP GET request to /cap.js on the server Intelbras DVR reveals several potentially sensitive pieces of information that are not properly protected or encrypted.\n"
     }
 ]

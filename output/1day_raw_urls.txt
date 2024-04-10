@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/dlink-unauth-cgi-script.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/intelbras-dvr-unauth.yaml
