@@ -29401,5 +29401,14 @@
         "category": "http",
         "severity": "info",
         "description": "Mitel MiCollab login panel was detected.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/takeovers/readme-takeover.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/readme-takeover.yaml",
+        "name": "readme-takeover",
+        "category": "http",
+        "severity": "high",
+        "description": "Readme.io takeover was detected."
     }
 ]
