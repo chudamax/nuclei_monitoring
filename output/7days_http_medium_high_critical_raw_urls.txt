@@ -2,7 +2,6 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cv
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/3com/3Com-wireless-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/next-terminal/next-terminal-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-29269.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/3ware-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-2879.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3273.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/thanos-prometheus-exposure.yaml
