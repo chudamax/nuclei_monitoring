@@ -29365,5 +29365,41 @@
         "category": "http",
         "severity": "high",
         "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-10T12:50:49+05:30",
+        "filepath": "http/exposed-panels/beyondtrust-priv-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/beyondtrust-priv-panel.yaml",
+        "name": "beyondtrust-priv-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "BeyondTrust Privileged Remote Access login panel was detected.\n"
+    },
+    {
+        "creation_time": "2024-04-08T13:18:03+05:30",
+        "filepath": "http/exposed-panels/zenml-dashboard-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/zenml-dashboard-panel.yaml",
+        "name": "zenml-dashboard-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-10T12:36:00+05:30",
+        "filepath": "http/misconfiguration/helm-dashboard-exposure.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/helm-dashboard-exposure.yaml",
+        "name": "helm-dashboard-exposure",
+        "category": "http",
+        "severity": "medium",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-07T20:31:43+02:00",
+        "filepath": "http/exposed-panels/mitel-micollab-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/mitel-micollab-panel.yaml",
+        "name": "mitel-micollab-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "Mitel MiCollab login panel was detected.\n"
     }
 ]
