@@ -29338,5 +29338,32 @@
         "category": "http",
         "severity": "low",
         "description": "The HTTP GET request to /cap.js on the server Intelbras DVR reveals several potentially sensitive pieces of information that are not properly protected or encrypted.\n"
+    },
+    {
+        "creation_time": "2024-04-09T22:45:08+05:30",
+        "filepath": "http/cves/2024/CVE-2024-3273.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3273.yaml",
+        "name": "CVE-2024-3273",
+        "category": "http",
+        "severity": "high",
+        "description": "UNSUPPORTED WHEN ASSIGNED ** A vulnerability, which was classified as critical, was found in D-Link DNS-320L, DNS-325, DNS-327L and DNS-340L up to 20240403. Affected is an unknown function of the file /cgi-bin/nas_sharing.cgi of the component HTTP GET Request Handler. The manipulation of the argument system leads to command injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The identifier of this vulnerability is VDB-259284. NOTE: This vulnerability only affects products that are no longer supported by the maintainer. NOTE: Vendor was contacted early and confirmed immediately that the product is end-of-life. It should be retired and replaced.\n"
+    },
+    {
+        "creation_time": "2024-03-30T20:03:34+05:30",
+        "filepath": "code/cves/2024/CVE-2024-3094.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/code/cves/2024/CVE-2024-3094.yaml",
+        "name": "CVE-2024-3094",
+        "category": "code",
+        "severity": "critical",
+        "description": "Malicious code was discovered in the upstream tarballs of xz, starting with version 5.6.0. Through a series of complex obfuscations, the liblzma build process extracts a prebuilt object file from a disguised test file existing in the source code, which is then used to modify specific functions in the liblzma code. This results in a modified liblzma library that can be used by any software linked against this library, intercepting and modifying the data interaction with this library.\n"
+    },
+    {
+        "creation_time": "2024-04-08T13:43:43+05:30",
+        "filepath": "http/misconfiguration/thanos-prometheus-exposure.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/thanos-prometheus-exposure.yaml",
+        "name": "thanos-prometheus-exposure",
+        "category": "http",
+        "severity": "high",
+        "description": "No description available."
     }
 ]
