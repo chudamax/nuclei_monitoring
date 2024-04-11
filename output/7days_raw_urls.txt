@@ -20,3 +20,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/de
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-0337.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl500g-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-rtn16-default-login.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/mitric-checker-panel.yaml

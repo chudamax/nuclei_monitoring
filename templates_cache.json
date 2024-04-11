@@ -29500,5 +29500,14 @@
         "category": "http",
         "severity": "info",
         "description": "Splunk HCE (HTTP Event Collector (HEC)) was detected.\n"
+    },
+    {
+        "creation_time": "2024-04-07T20:06:38+02:00",
+        "filepath": "http/exposed-panels/mitric-checker-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/mitric-checker-panel.yaml",
+        "name": "mitric-checker-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "Mitric Checker login panel was detected.\n"
     }
 ]
