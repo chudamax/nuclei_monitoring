@@ -2,7 +2,6 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vu
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/rfi/generic-rfi.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/xxe/generic-xxe.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2023/CVE-2023-47218.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-29269.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-2879.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3273.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/thanos-prometheus-exposure.yaml
