@@ -1,5 +1,4 @@
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/aspnet-soap-webservices-asmx.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2022/CVE-2022-0424.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/allnet/allnet-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl520GU-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-0337.yaml
