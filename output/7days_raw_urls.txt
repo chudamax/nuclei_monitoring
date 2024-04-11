@@ -2,7 +2,6 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vu
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/rfi/generic-rfi.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/xxe/generic-xxe.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2023/CVE-2023-47218.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/next-terminal/next-terminal-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-29269.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-2879.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/dlink-unauth-cgi-script.yaml
@@ -14,3 +13,10 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/ex
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/helm-dashboard-exposure.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/mitel-micollab-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/aspnet-soap-webservices-asmx.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2022/CVE-2022-0424.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/technologies/citrix-xenmobile-version.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/allnet/allnet-default-login.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl520GU-default-login.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-0337.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl500g-default-login.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-rtn16-default-login.yaml
