@@ -13,3 +13,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/ex
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/zenml-dashboard-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/helm-dashboard-exposure.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/mitel-micollab-panel.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/aspnet-soap-webservices-asmx.yaml

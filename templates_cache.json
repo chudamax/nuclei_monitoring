@@ -29410,5 +29410,23 @@
         "category": "http",
         "severity": "high",
         "description": "Readme.io takeover was detected."
+    },
+    {
+        "creation_time": "2024-04-02T06:33:44+02:00",
+        "filepath": "http/exposed-panels/outsystems-servicecenter-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/outsystems-servicecenter-panel.yaml",
+        "name": "outsystems-servicecenter-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "OutSystems Service Center login panel was detected.\n"
+    },
+    {
+        "creation_time": "2024-04-11T10:36:12+05:30",
+        "filepath": "http/exposures/apis/aspnet-soap-webservices-asmx.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/aspnet-soap-webservices-asmx.yaml",
+        "name": "aspnet-soap-webservices-asmx",
+        "category": "http",
+        "severity": "info",
+        "description": "SOAP-based ASP.NET web services collection was detected.\n"
     }
 ]
