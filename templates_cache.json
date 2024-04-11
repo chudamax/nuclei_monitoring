@@ -30364,5 +30364,14 @@
         "category": "cloud",
         "severity": "info",
         "description": "Searches for Firebase Realtime Databases in GCP.\n"
+    },
+    {
+        "creation_time": "2024-04-08T13:33:08+05:30",
+        "filepath": "http/exposed-panels/akhq-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/akhq-panel.yaml",
+        "name": "akhq-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "AKHQ Panel was discovered.\n"
     }
 ]

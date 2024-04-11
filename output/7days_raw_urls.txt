@@ -110,3 +110,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/a
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/vpc/vpc-endpoints-not-deployed.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/vpc/vpc-flowlogs-not-enabled.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/vpc/vpn-tunnel-down.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/akhq-panel.yaml
