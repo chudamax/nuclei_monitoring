@@ -30436,5 +30436,248 @@
         "category": "http",
         "severity": "info",
         "description": "No description available."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/cves/2013/CVE-2013-3827.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2013/CVE-2013-3827.yaml",
+        "name": "CVE-2013-3827",
+        "category": "http",
+        "severity": "medium",
+        "description": "An Unspecified vulnerability in the Oracle GlassFish Server component in Oracle Fusion Middleware 2.1.1, 3.0.1, and 3.1.2; the Oracle JDeveloper component in Oracle Fusion Middleware 11.1.2.3.0, 11.1.2.4.0, and 12.1.2.0.0; and the Oracle WebLogic Server component in Oracle Fusion Middleware 10.3.6.0 and 12.1.1 allows remote attackers to affect confidentiality via unknown vectors related to Java Server Faces or Web Container."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/cves/2014/CVE-2014-6271.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2014/CVE-2014-6271.yaml",
+        "name": "CVE-2014-6271",
+        "category": "http",
+        "severity": "critical",
+        "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgid modules in the Apache HTTP Server, scripts executed by unspecified DHCP clients, and other situations in which setting the environment occurs across a privilege boundary from Bash execution, aka ShellShock."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/backups/sql-dump.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/backups/sql-dump.yaml",
+        "name": "sql-dump",
+        "category": "http",
+        "severity": "medium",
+        "description": "A MySQL dump file was found"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/codeigniter-env.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/codeigniter-env.yaml",
+        "name": "codeigniter-env",
+        "category": "http",
+        "severity": "high",
+        "description": "Codeigniter .env file was discovered."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/git-config-nginxoffbyslash.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/git-config-nginxoffbyslash.yaml",
+        "name": "git-config-nginxoffbyslash",
+        "category": "http",
+        "severity": "medium",
+        "description": "Nginx is vulnerable to git configuration exposure."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/github-workflows-disclosure.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/github-workflows-disclosure.yaml",
+        "name": "github-workflows-disclosure",
+        "category": "http",
+        "severity": "medium",
+        "description": "Github Workflow was exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/laravel-env.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/laravel-env.yaml",
+        "name": "laravel-env",
+        "category": "http",
+        "severity": "high",
+        "description": "A Laravel .env file was discovered, which stores sensitive information like database credentials and tokens. It should not be publicly accessible.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/phpinfo-files.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/phpinfo-files.yaml",
+        "name": "phpinfo-files",
+        "category": "http",
+        "severity": "low",
+        "description": "PHPinfo page was detected. The output of the phpinfo() command can reveal sensitive and detailed PHP environment information.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/server-private-keys.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/server-private-keys.yaml",
+        "name": "server-private-keys",
+        "category": "http",
+        "severity": "high",
+        "description": "Private SSL, SSH, TLS, and JWT keys were detected."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/configs/zend-config-file.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/configs/zend-config-file.yaml",
+        "name": "zend-config-file",
+        "category": "http",
+        "severity": "high",
+        "description": "Zend configuration file was exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/files/routes-ini.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/files/routes-ini.yaml",
+        "name": "routes-ini",
+        "category": "http",
+        "severity": "info",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/files/shellscripts.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/files/shellscripts.yaml",
+        "name": "shellscripts",
+        "category": "http",
+        "severity": "low",
+        "description": "This template checks exposure of bash scripts."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/exposures/logs/error-logs.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/logs/error-logs.yaml",
+        "name": "error-logs",
+        "category": "http",
+        "severity": "low",
+        "description": "Error log files were exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/aem/aem-default-get-servlet.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/aem/aem-default-get-servlet.yaml",
+        "name": "aem-default-get-servlet",
+        "category": "http",
+        "severity": "low",
+        "description": "Sensitive information might be exposed via AEM DefaultGetServlet."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/aem/aem-gql-servlet.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/aem/aem-gql-servlet.yaml",
+        "name": "aem-gql-servlet",
+        "category": "http",
+        "severity": "low",
+        "description": "AEM GQLServlet is exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/aem/aem-misc-admin.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/aem/aem-misc-admin.yaml",
+        "name": "aem-misc-admin",
+        "category": "http",
+        "severity": "high",
+        "description": "Adobe AEM Misc Admin Dashboard is exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/jolokia/jolokia-info-disclosure.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/jolokia/jolokia-info-disclosure.yaml",
+        "name": "jolokia-info-disclosure",
+        "category": "http",
+        "severity": "medium",
+        "description": "Jolokia - Information is exposed."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/phpmyadmin/phpmyadmin-server-import.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/phpmyadmin/phpmyadmin-server-import.yaml",
+        "name": "phpmyadmin-server-import",
+        "category": "http",
+        "severity": "high",
+        "description": "Multiple phpMyAdmin server import pages were detected."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/misconfiguration/phpmyadmin/phpmyadmin-setup.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/phpmyadmin/phpmyadmin-setup.yaml",
+        "name": "phpmyadmin-setup",
+        "category": "http",
+        "severity": "medium",
+        "description": "Multiple phpMyAdmin setup files were detected."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/technologies/graphql-detect.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/technologies/graphql-detect.yaml",
+        "name": "graphql-detect",
+        "category": "http",
+        "severity": "info",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/technologies/telerik/telerik-dialoghandler-detect.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/technologies/telerik/telerik-dialoghandler-detect.yaml",
+        "name": "telerik-dialoghandler-detect",
+        "category": "http",
+        "severity": "info",
+        "description": "This template detects the Telerik Web UI Dialog Handler."
+    },
+    {
+        "creation_time": "2023-05-10T16:47:21+05:30",
+        "filepath": "http/vulnerabilities/generic/generic-env.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/generic/generic-env.yaml",
+        "name": "generic-env",
+        "category": "http",
+        "severity": "high",
+        "description": "A .env file was discovered containing sensitive information like database credentials and tokens. It should not be publicly accessible.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/generic/generic-j2ee-lfi.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/generic/generic-j2ee-lfi.yaml",
+        "name": "generic-j2ee-lfi",
+        "category": "http",
+        "severity": "high",
+        "description": "Generic J2EE Scan panel was detected. Looks for J2EE specific LFI vulnerabilities; tries to leak the web.xml file."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/generic/generic-linux-lfi.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/generic/generic-linux-lfi.yaml",
+        "name": "generic-linux-lfi",
+        "category": "http",
+        "severity": "high",
+        "description": "Generic Linux is subject to Local File Inclusion - the vulnerability was identified by requesting /etc/passwd from the server."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/generic/generic-windows-lfi.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/generic/generic-windows-lfi.yaml",
+        "name": "generic-windows-lfi",
+        "category": "http",
+        "severity": "high",
+        "description": "Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/other/bitrix-open-redirect.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/other/bitrix-open-redirect.yaml",
+        "name": "bitrix-open-redirect",
+        "category": "http",
+        "severity": "medium",
+        "description": "Bitrix Site Management Russia 2.0 contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations."
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/wordpress/wordpress-accessible-wpconfig.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/wordpress/wordpress-accessible-wpconfig.yaml",
+        "name": "wordpress-accessible-wpconfig",
+        "category": "http",
+        "severity": "medium",
+        "description": "WordPress `wp-config` was discovered. This file is remotely accessible and its content available for reading."
     }
 ]
