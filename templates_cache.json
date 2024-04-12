@@ -30373,5 +30373,23 @@
         "category": "http",
         "severity": "info",
         "description": "AKHQ Panel was discovered.\n"
+    },
+    {
+        "creation_time": "2024-04-12T04:44:05+05:30",
+        "filepath": "http/exposed-panels/ni-web-based-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/ni-web-based-panel.yaml",
+        "name": "ni-web-based-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-12T04:48:06+05:30",
+        "filepath": "http/exposed-panels/rtm-web-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/rtm-web-panel.yaml",
+        "name": "rtm-web-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "No description available."
     }
 ]
