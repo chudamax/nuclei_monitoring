@@ -1,4 +1,2 @@
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/ni-web-based-panel.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/rtm-web-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/suprema-biostar-panel.yaml
