@@ -1,7 +1,6 @@
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/allnet/allnet-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl520GU-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl500g-default-login.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-rtn16-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/acm/acm-cert-expired.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/acm/acm-cert-renewal-30days.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/acm/acm-cert-renewal-45days.yaml
