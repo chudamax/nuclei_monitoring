@@ -1,7 +1,6 @@
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/sqli/sqli-error-based.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/rfi/generic-rfi.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dast/vulnerabilities/xxe/generic-xxe.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-2879.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3273.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/thanos-prometheus-exposure.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/helm-dashboard-exposure.yaml
