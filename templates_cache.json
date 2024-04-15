@@ -30688,5 +30688,14 @@
         "category": "http",
         "severity": "high",
         "description": "Barco ClickShare contains a default login vulnerability. Default login password 'admin' was found.\n"
+    },
+    {
+        "creation_time": "2024-04-15T08:14:23+07:00",
+        "filepath": "javascript/misconfiguration/pgsql/pgsql-empty-password.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/misconfiguration/pgsql/pgsql-empty-password.yaml",
+        "name": "pgsql-empty-password",
+        "category": "javascript",
+        "severity": "critical",
+        "description": "Postgresql has a flaw that allows the attacker to login with empty password.\n"
     }
 ]
