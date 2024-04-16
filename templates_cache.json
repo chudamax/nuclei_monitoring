@@ -30697,5 +30697,32 @@
         "category": "javascript",
         "severity": "critical",
         "description": "Postgresql has a flaw that allows the attacker to login with empty password.\n"
+    },
+    {
+        "creation_time": "2024-04-12T20:11:21-05:00",
+        "filepath": "http/takeovers/softr-takeover.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml",
+        "name": "softr-takeover",
+        "category": "http",
+        "severity": "high",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-15T09:44:34+05:30",
+        "filepath": "http/exposed-panels/algonomia-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/algonomia-panel.yaml",
+        "name": "algonomia-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "Algonomia Leaf Platform login panel was detected.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/technologies/microsoft/ms-exchange-server.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/technologies/microsoft/ms-exchange-server.yaml",
+        "name": "ms-exchange-server",
+        "category": "http",
+        "severity": "info",
+        "description": "Check for presence of Exchange Server using Outlook Web App path data."
     }
 ]

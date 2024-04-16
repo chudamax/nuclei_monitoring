@@ -92,3 +92,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/mi
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/barco-clickshare-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/misconfiguration/pgsql/pgsql-empty-password.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
