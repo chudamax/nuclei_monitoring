@@ -114,3 +114,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/ex
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/technologies/tibco-spotfire-services-detect.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/other/user-management-system-sqli.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3400.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/installer/phpipam-installer.yaml
