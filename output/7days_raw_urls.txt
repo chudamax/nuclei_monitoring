@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/intelbras-dvr-unauth.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/beyondtrust-priv-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/helm-dashboard-exposure.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/aspnet-soap-webservices-asmx.yaml
