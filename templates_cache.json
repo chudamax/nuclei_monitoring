@@ -30724,5 +30724,41 @@
         "category": "http",
         "severity": "info",
         "description": "Check for presence of Exchange Server using Outlook Web App path data."
+    },
+    {
+        "creation_time": "2024-04-11T12:36:53+08:00",
+        "filepath": "http/exposed-panels/ollama-llm-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/ollama-llm-panel.yaml",
+        "name": "ollama-llm-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "Ollama LLM Panel was detected\n"
+    },
+    {
+        "creation_time": "2024-04-12T09:48:55+02:00",
+        "filepath": "http/exposures/apis/redfish-api.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/redfish-api.yaml",
+        "name": "redfish-api",
+        "category": "http",
+        "severity": "info",
+        "description": "Redfish API was detected.\n"
+    },
+    {
+        "creation_time": "2024-04-02T21:19:28+03:00",
+        "filepath": "http/vulnerabilities/other/opencart-core-sqli.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/other/opencart-core-sqli.yaml",
+        "name": "opencart-core-sqli",
+        "category": "http",
+        "severity": "high",
+        "description": "Opencart allows SQL Injection via parameter 'search' in /index.php?route=product/search&search=. Exploiting this issue could allow an attacker to compromise the application, access or modify data, or exploit latent vulnerabilities in the underlying database.\n"
+    },
+    {
+        "creation_time": "2024-04-13T09:58:45+02:00",
+        "filepath": "http/exposed-panels/tibco-spotfire-panel.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/tibco-spotfire-panel.yaml",
+        "name": "tibco-spotfire-panel",
+        "category": "http",
+        "severity": "info",
+        "description": "TIBCO Spotfire login panel was detected.\n"
     }
 ]
