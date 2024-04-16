@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3400.yaml
