@@ -94,3 +94,4 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascr
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/cves/2023/CVE-2023-48795.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/other/user-management-system-sqli.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3400.yaml
