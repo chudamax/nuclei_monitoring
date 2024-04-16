@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/cves/2023/CVE-2023-48795.yaml
