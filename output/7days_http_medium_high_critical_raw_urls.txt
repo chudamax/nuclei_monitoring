@@ -1,6 +1,5 @@
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/allnet/allnet-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl520GU-default-login.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-0337.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-wl500g-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/asus/asus-rtn16-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/apple-cups-exposure.yaml
