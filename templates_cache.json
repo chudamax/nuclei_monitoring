@@ -30832,5 +30832,14 @@
         "category": "http",
         "severity": "critical",
         "description": "A SQL injection vulnerability was identified based on an error message returned by the server."
+    },
+    {
+        "creation_time": "2024-04-17T14:21:58+05:30",
+        "filepath": "http/misconfiguration/sentinel-license-monitor.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/sentinel-license-monitor.yaml",
+        "name": "sentinel-license-monitor",
+        "category": "http",
+        "severity": "unknown",
+        "description": "No description available."
     }
 ]
