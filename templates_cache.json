@@ -30823,5 +30823,14 @@
         "category": "http",
         "severity": "high",
         "description": "PHP IPAM is susceptible to the Installation page exposure due to misconfiguration.\n"
+    },
+    {
+        "creation_time": "2023-04-27T09:58:59+05:30",
+        "filepath": "http/vulnerabilities/generic/error-based-sql-injection.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/generic/error-based-sql-injection.yaml",
+        "name": "error-based-sql-injection",
+        "category": "http",
+        "severity": "critical",
+        "description": "A SQL injection vulnerability was identified based on an error message returned by the server."
     }
 ]
