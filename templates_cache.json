@@ -30859,5 +30859,14 @@
         "category": "http",
         "severity": "info",
         "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-11T10:30:03-03:00",
+        "filepath": "ssl/c2/sliver-c2.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/ssl/c2/sliver-c2.yaml",
+        "name": "sliver-c2",
+        "category": "ssl",
+        "severity": "info",
+        "description": "Sliver is a Command and Control (C2) system made for penetration testers, red teams, and advanced persistent threats. It generates implants (slivers) that can run on virtually every architecture out there, and securely manage these connections through a central server\n"
     }
 ]
