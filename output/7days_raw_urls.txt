@@ -98,11 +98,9 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/mi
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/powerchute-network-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/suprema-biostar-panel.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/barco-clickshare-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/misconfiguration/pgsql/pgsql-empty-password.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/algonomia-panel.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/ollama-llm-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/apis/redfish-api.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/tibco-spotfire-panel.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/cves/2023/CVE-2023-48795.yaml

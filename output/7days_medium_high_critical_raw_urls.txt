@@ -86,7 +86,6 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/a
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cloud/aws/vpc/vpn-tunnel-down.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/apple-cups-exposure.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/default-logins/barco-clickshare-default-login.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/misconfiguration/pgsql/pgsql-empty-password.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/cves/2023/CVE-2023-48795.yaml
