@@ -11,3 +11,5 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/mi
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/sentinel-license-monitor.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/files/ht-deployment.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposed-panels/urbackup-panel.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/uptime-takeover.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/helpdocs-takeover.yaml

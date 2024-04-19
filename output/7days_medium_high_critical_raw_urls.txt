@@ -5,3 +5,5 @@ https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vu
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3400.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/misconfiguration/installer/phpipam-installer.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/exposures/files/ht-deployment.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/uptime-takeover.yaml
+https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/helpdocs-takeover.yaml

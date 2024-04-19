@@ -30868,5 +30868,41 @@
         "category": "ssl",
         "severity": "info",
         "description": "Sliver is a Command and Control (C2) system made for penetration testers, red teams, and advanced persistent threats. It generates implants (slivers) that can run on virtually every architecture out there, and securely manage these connections through a central server\n"
+    },
+    {
+        "creation_time": "2024-04-15T10:02:49+05:30",
+        "filepath": "http/takeovers/uptime-takeover.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/uptime-takeover.yaml",
+        "name": "uptime-takeover",
+        "category": "http",
+        "severity": "high",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-19T23:16:14+05:30",
+        "filepath": "http/takeovers/helpdocs-takeover.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/helpdocs-takeover.yaml",
+        "name": "helpdocs-takeover",
+        "category": "http",
+        "severity": "high",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-04-10T01:32:05-05:00",
+        "filepath": "http/takeovers/gohire-takeover.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/gohire-takeover.yaml",
+        "name": "gohire-takeover",
+        "category": "http",
+        "severity": "high",
+        "description": "No description available."
+    },
+    {
+        "creation_time": "2024-03-24T11:58:26+00:00",
+        "filepath": "dns/bimi-detect.yaml",
+        "raw_url": "https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/dns/bimi-detect.yaml",
+        "name": "bimi-detect",
+        "category": "dns",
+        "severity": "info",
+        "description": "A BIMI record was detected\n"
     }
 ]
