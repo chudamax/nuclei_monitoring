@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/misconfiguration/pgsql/pgsql-empty-password.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/javascript/cves/2023/CVE-2023-48795.yaml

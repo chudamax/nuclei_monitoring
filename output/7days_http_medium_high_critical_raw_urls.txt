@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-26331.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/takeovers/softr-takeover.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/vulnerabilities/other/user-management-system-sqli.yaml
 https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/http/cves/2024/CVE-2024-3400.yaml
